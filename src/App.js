@@ -8,12 +8,9 @@ function App() {
 
   const [purchases, setPurchases] = useState(data);
   const removePurchases = (id) => {
-    let newPurchases = purchases.filter((purchase) => purchase.id !== id);
+  let newPurchases = purchases.filter((purchase) => purchase.id !== id);
   setPurchases(newPurchases)
 }
-
-
-
 
 
  return (
@@ -22,7 +19,7 @@ function App() {
     <Header/>
   </div>
   <div className='container'>
-    <h1 className='totalItems'>Total Items {purchases.length} :</h1>
+    <h1 className='totalItems'>{ purchases.length === 0 ? `Your basket is empty` : `Total Items ${purchases.length} :`}</h1>
   </div>
 
   {purchases.map((element => {
