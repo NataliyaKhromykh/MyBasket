@@ -1,14 +1,14 @@
 import './App.css';
 import { useState } from 'react';
 import { data } from './data';
-import Header from './header';
+import Header from './Header';
 
 
 function App() {
 
   const [purchases, setPurchases] = useState(data);
   const removePurchases = (id) => {
-  let newPurchases = purchases.filter((purchase) => purchase.id !== id);
+    let newPurchases = purchases.filter((purchase) => purchase.id !== id);
   setPurchases(newPurchases)
 }
 
@@ -16,7 +16,7 @@ function App() {
  return (
   <div>
   <div className="colorHeader">
-    <Header/>
+    <Header basket={purchases.length}/>
   </div>
   <div className='container'>
     <h1 className='totalItems'>{ purchases.length === 0 ? `Your basket is empty` : `Total Items ${purchases.length} :`}</h1>
